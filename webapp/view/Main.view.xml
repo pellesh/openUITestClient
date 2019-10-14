@@ -1,0 +1,78 @@
+<mvc:View controllerName="openUIProject.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml"
+		  xmlns:mvc="sap.ui.core.mvc"
+		  displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}" id="addTranslate" class="sapUiContentPadding">
+				<content>
+					<MessageStrip
+						id="error_message"
+						text=""
+						type="Error"
+						showIcon="true"
+						showCloseButton="true"
+						class="sapUiMediumMargin"
+						visible="{notifications>/error}">
+					</MessageStrip>
+					<MessageStrip
+						id="warning_message"
+						text=""
+						type="Warning"
+						showIcon="true"
+						showCloseButton="true"
+						class="sapUiMediumMargin"
+						visible="{notifications>/warning}">
+					</MessageStrip>
+					<MessageStrip
+						id="success_message"
+						text=""
+						type="Success"
+						showIcon="true"
+						showCloseButton="true"
+						class="sapUiMediumMargin"
+						visible="{notifications>/success}">
+					</MessageStrip>
+
+					<TabContainer id="myTabContainer"
+								  showAddNewButton="false"
+								  class="sapUiResponsiveContentPadding closeTabDisabled"
+								  addNewButtonPress="addNewButtonPressHandler"
+								  itemClose="onTabClose">
+						<items>
+							<TabContainerItem id="get_tab" name="{i18n>search_translate}">
+								<content>
+									<panel expandable="false">
+										<Label text="{i18n>word}" class="sapUiSmallMargin"/>
+										<Input value="{get_translate>/word}" valueLiveUpdate="true" width="200px"
+											   id="get_word"/>
+										<Label text="{i18n>translate}" class="sapUiSmallMargin"/>
+										<Input value="{get_translate>/translate}" valueLiveUpdate="true" width="200px"
+											   id="get_translate"/>
+										<Button text="{i18n>search}" press="getTranslate" id="get_translate_btn"/>
+									</panel>
+								</content>
+							</TabContainerItem>
+							<TabContainerItem  id="add_tab" name="{i18n>add_translate}">
+								<content>
+									<panel expandable="false">
+										<Label text="{i18n>word}" class="sapUiSmallMargin"/>
+										<Input value="{add_translate>/word}" valueLiveUpdate="true" width="200px"
+											   id="add_word"/>
+										<Label text="{i18n>translate}" class="sapUiSmallMargin"/>
+										<Input value="{add_translate>/translate}" valueLiveUpdate="true" width="200px"
+											   id="add_translate"/>
+										<Button text="{i18n>add}" press="addTranslate" id="add_translate_btn"/>
+									</panel>
+								</content>
+							</TabContainerItem>
+
+
+						</items>
+					</TabContainer>
+
+
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

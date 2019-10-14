@@ -1,0 +1,4 @@
+.closeTabDisabled .sapMTSItemCloseBtnCnt{
+    width: 10px !important;
+    visibility: hidden;
+}
