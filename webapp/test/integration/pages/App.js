@@ -144,7 +144,7 @@ sap.ui.require([
 							Opa5.assert.ok(sViewName, "Found messages.");
 							this.waitFor({
 								controlType: "sap.m.MessageStrip",
-								visible: false,
+								visible: true,
 								matchers:  [function(oControl) {
 									return oControl.getType() === 'Success';
 								}],
